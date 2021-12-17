@@ -1,0 +1,53 @@
+metadata:
+  name: openvino-omz-public-yolo-v4-tf
+  namespace: cvat
+  annotations:
+    name: YOLO v4
+    type: detector
+    framework: openvino
+    spec: |
+      [
+        { "id": 0, "name": "product" }
+      ]
+
+spec:
+  description: YOLO v4 via Intel OpenVINO
+  runtime: 'python:3.8'
+  handler: main:handler
+  eventTimeout: 30s
+#  env:
+#    - name: NUCLIO_PYTHON_EXE_PATH
+#      value: /opt/nuclio/common/openvino/python3
+
+  build:
+    image: cvat/openvino.omz.public.yolo-v4-tf
+    baseImage: ubuntu:20.04
+
+    directives:
+      preCopy:
+        - kind: USER
+          value: root
+        - kind: RUN
+          value: apt-get update && apt-get -y install curl git python3 python3-pip
+        - kind: WORKDIR
+          value: /opt/nuclio
+        - kind: RUN
+          value: pip3 install numpy==1.21.4 pyyaml wheel opencv-python-headless==4.5.4.60 Pillow -i https://pypi.douban.com/simple/
+        - kind: RUN
+          value: ln -s /usr/bin/pip3 /usr/local/bin/pip
+
+  triggers:
+    myHttpTrigger:
+      maxWorkers: 2
+      kind: 'http'
+      workerAvailabilityTimeoutMilliseconds: 10000
+      attributes:
+        port: 49155
+        maxRequestBodySize: 33554432 # 32MB
+
+  platform:
+    attributes:
+      restartPolicy:
+        name: always
+        maximumRetryCount: 3
+      mountMode: volume
