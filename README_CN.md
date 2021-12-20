@@ -7,7 +7,7 @@
 
 一切部署好之后
 
-1. 把darknet训练出来的yolov4的权重文件*.weights以及配置文件*.cfg放到yolo-weight文件夹下
+1. 把darknet训练出来的yolov4的权重文件「*.weights」以及配置文件「*.cfg」放到yolo-weight文件夹下
 2. 把本项目构建成 docker镜像，便可使用models进行自动标注
 
 我这边直接在原项目中 创建的，所以我的调用是
