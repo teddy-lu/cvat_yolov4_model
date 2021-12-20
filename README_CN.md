@@ -18,5 +18,6 @@
 ![pic1](./pic/pic1.png)
 
 下面是演示，分别是单张识别 和 批量操作
+
 ![pic1](./pic/pic2.gif)
 ![pic1](./pic/pic3.gif)
