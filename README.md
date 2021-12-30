@@ -19,7 +19,8 @@ Because I created the project under the project [CVAT](https://github.com/openvi
 ./deploy_cpu.sh ./openvino/omz/public/yolo-v4-tf/
 ```
 
-If you find that the NODE PORT is 0, then you have to check your build if there is something wrong. Normally, there will be two output as below  
+If you find that the NODE PORT is 0, then you have to check your build if there is something wrong.
+Normally, there will be two output as below  
 ![pic1](./pic/pic1.png)
 
 Below is an example, single and multiple product image recognition.
