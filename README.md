@@ -20,9 +20,9 @@ Because I created the project under the project [CVAT](https://github.com/openvi
 ```
 
 If you find that the NODE PORT is 0, then you have to check your build if there is something wrong. Normally, there will be two output as below  
-![pic1](/home/teddy/PycharmProjects/cvat_yolov4_model/pic/pic1.png)
+![pic1](./pic/pic1.png)
 
 Below is an example, single and multiple product image recognition.
 
-![pic1](/home/teddy/PycharmProjects/cvat_yolov4_model/pic/pic2.gif)
-![pic1](/home/teddy/PycharmProjects/cvat_yolov4_model/pic/pic3.gif)
+![pic1](./pic/pic2.gif)
+![pic1](./pic/pic3.gif)
